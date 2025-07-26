@@ -1,3 +1,8 @@
+/*
+    This function gets the data published by the kinetic camera on the topic
+    "/rgbd_camera/depth/points" and save them into a pcd file
+*/
+
 #include <ros/ros.h>
 #include <iostream>
 #include <sensor_msgs/PointCloud2.h>
@@ -9,7 +14,8 @@
 void
 cloud_cb (const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 {
-    pcl::PointCloud<pcl::PointXYZ> cloud;
+    pcl::PointCloud<pcl::PointXYZ> cloud;   // distance of the point from the camera_link
+    // function that transform a data from ros to point cloud and save the data in the variable cloud
     pcl::fromROSMsg (*cloud_msg, cloud);
 
     pcl::PCDWriter cloud_writer;

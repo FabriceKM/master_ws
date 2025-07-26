@@ -1,3 +1,7 @@
+// This node works correctly. The robot in gazebo (spawn_ur5_camera.launch(custom_robot_gazebo pkg))
+// is able to pick the object and place it
+
+
 #include <ros/ros.h>
 #include <moveit/planning_scene_interface/planning_scene_interface.h>
 #include <moveit/move_group_interface/move_group_interface.h>
@@ -21,9 +25,11 @@ public:
         set_link_state_client = nh.serviceClient<gazebo_msgs::SetLinkState>("/gazebo/set_link_state");
         get_link_state_client = nh.serviceClient<gazebo_msgs::GetLinkState>("/gazebo/get_link_state");
 
+        // keep the attach function alive
         attach_timer = nh.createTimer(ros::Duration(0.01), &PickAndPlace::updateAttachment, this); // Timer a 10 ms
     }
 
+    // This function creates some kind of fix joint between the red cube and the wrist_3_link
     void attachObjectToGripper(const std::string& object_name, const std::string& wrist_link) 
     {
         attached_object_name = object_name;
@@ -51,7 +57,7 @@ public:
     void close_gripper(moveit::planning_interface::MoveGroupInterface& gripper)
     {
         gripper.setMaxVelocityScalingFactor(0.5);
-        gripper.setJointValueTarget("robotiq_85_left_knuckle_joint", 0.2);
+        gripper.setJointValueTarget("robotiq_85_left_knuckle_joint", 0.2);   // 0.65, 0.2
         gripper.move();
         attachObjectToGripper("red_cube::red_cuboid", "ur5::wrist_3_link");        
     }
@@ -72,7 +78,9 @@ public:
         tf2::Quaternion orientation;
         orientation.setRPY(tau/2, -tau/4, 0);
         pick_position.orientation = tf2::toMsg(orientation);
-        const double eef_offset = 0.2;
+        // The offset correspond to the distance between the origin of the link tool0 and 
+        // the origin of the object we want to pick
+        const double eef_offset = 0.2; // 0.2
         pick_position.position.x = 0 - eef_offset;
         pick_position.position.y = 0.5;
         pick_position.position.z = 0.3;
@@ -157,10 +165,13 @@ private:
             gazebo_msgs::SetLinkState set_link_state_srv;
             gazebo_msgs::LinkState link_state;
 
+            // Here we freeze the position of the object and the link of the robot we want to attach to
             // get the relative pose
             link_state.link_name = attached_object_name;
             link_state.reference_frame = attached_reference_frame;
             link_state.pose = relative_pose; // Use the relative pose
+            // Here putting the twist message of gazebo to 0 means that we deactivate all the physics
+            // that are subjected to the object
             link_state.twist.linear.x = 0.0;
             link_state.twist.linear.y = 0.0;
             link_state.twist.linear.z = 0.0;

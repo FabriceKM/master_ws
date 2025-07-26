@@ -6499,6 +6499,45 @@ ur20_moveit_plugin/fast:
 .PHONY : ur20_moveit_plugin/fast
 
 #=============================================================================
+# Target rules for targets named draw_circle
+
+# Build rule for target.
+draw_circle: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 draw_circle
+.PHONY : draw_circle
+
+# fast build rule for target.
+draw_circle/fast:
+	$(MAKE) -f robot_inverse_kinematics/CMakeFiles/draw_circle.dir/build.make robot_inverse_kinematics/CMakeFiles/draw_circle.dir/build
+.PHONY : draw_circle/fast
+
+#=============================================================================
+# Target rules for targets named repeatable_trajectory
+
+# Build rule for target.
+repeatable_trajectory: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 repeatable_trajectory
+.PHONY : repeatable_trajectory
+
+# fast build rule for target.
+repeatable_trajectory/fast:
+	$(MAKE) -f robot_inverse_kinematics/CMakeFiles/repeatable_trajectory.dir/build.make robot_inverse_kinematics/CMakeFiles/repeatable_trajectory.dir/build
+.PHONY : repeatable_trajectory/fast
+
+#=============================================================================
+# Target rules for targets named prova2
+
+# Build rule for target.
+prova2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prova2
+.PHONY : prova2
+
+# fast build rule for target.
+prova2/fast:
+	$(MAKE) -f robot_inverse_kinematics/CMakeFiles/prova2.dir/build.make robot_inverse_kinematics/CMakeFiles/prova2.dir/build
+.PHONY : prova2/fast
+
+#=============================================================================
 # Target rules for targets named moveit_ros_manipulation_gencfg
 
 # Build rule for target.
@@ -7167,6 +7206,9 @@ help:
 	@echo "... ur3e_moveit_plugin"
 	@echo "... ur30_moveit_plugin"
 	@echo "... ur20_moveit_plugin"
+	@echo "... draw_circle"
+	@echo "... repeatable_trajectory"
+	@echo "... prova2"
 	@echo "... moveit_ros_manipulation_gencfg"
 	@echo "... ur5_test_ik_collision_objects"
 	@echo "... test_ik_collision_objects"

@@ -63,15 +63,18 @@ cloud_cb (const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     pcl::PassThrough<pcl::PointXYZ> pass;
     pass.setInputCloud(cloud_filtered);
     pass.setFilterFieldName("z");
-    pass.setFilterLimits(0.5, 1.05); // PLAY --> based on the z direction, check the pcd file
+    // pass.setFilterLimits(0.5, 1.05); // PLAY --> based on the z direction, check the pcd file
+    pass.setFilterLimits(0.5, 1.10);
     pass.filter(*cloud_filtered);
 
     pass.setFilterFieldName("x");
-    pass.setFilterLimits(0.0, 0.2); // PLAY --> based on the x direction, check the pcd file
+    // pass.setFilterLimits(0.0, 0.2); // PLAY --> based on the x direction, check the pcd file
+    pass.setFilterLimits(-0.15, -0.12);
     pass.filter(*cloud_filtered);
 
     pass.setFilterFieldName("y");
-    pass.setFilterLimits(-0.2, 0); // PLAY --> based on the y direction, check the pcd file
+    pass.setFilterLimits(-0.2, 0.18); // PLAY --> based on the y direction, check the pcd file
+    // pass.setFilterLimits(-0.2, 0.05);
     pass.filter(*cloud_filtered);
 
     // Remove outliers using a statistical outlier removal filter

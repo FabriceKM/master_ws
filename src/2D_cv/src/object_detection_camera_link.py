@@ -46,7 +46,7 @@ class ColorFilter(object):
 
         # Conversion between image frame to camera_link frame
         # pxl_mm_conversion = 15/20
-        pxl_m_conversion = 16/0.02
+        pxl_m_conversion = 16/0.02   # pxl_m_conversion = 15/0.02
         # coordinate image
         x_pxl_center = 319 
         y_pxl_center = 240

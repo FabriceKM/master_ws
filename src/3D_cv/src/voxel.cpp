@@ -1,3 +1,5 @@
+/* The function filters the image data published by the camera */
+
 #include <ros/ros.h>
 #include <sensor_msgs/PointCloud2.h>
 #include <pcl_conversions/pcl_conversions.h>
@@ -14,12 +16,13 @@ cloud_cb (const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     pcl::PCLPointCloud2ConstPtr cloudPtr(cloud);
     pcl::PCLPointCloud2 cloud_filtered;
 
-    // Conversion to PCL
+    // Conversion from ROS data type to PCL
     pcl_conversions::toPCL(*cloud_msg, *cloud);
 
     // perform the filtering through Voxel
     pcl::VoxelGrid<pcl::PCLPointCloud2> sor;
     sor.setInputCloud (cloudPtr);
+    // function that will size the size of the filtration
     sor.setLeafSize(0.05, 0.05, 0.05); // PLAY
     sor.filter(cloud_filtered);
 

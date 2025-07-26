@@ -209,6 +209,18 @@ add_executable(pick_place_ur5_grasp src/pick_place_ur5_grasp.cpp)
 add_dependencies(pick_place_ur5_grasp ${cobot_test_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(pick_place_ur5_grasp ${catkin_LIBRARIES})
 
+add_executable(prova2 src/prova2.cpp)
+add_dependencies(prova2 ${cobot_test_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(prova2 ${catkin_LIBRARIES})
+
+add_executable(repeatable_trajectory src/repeatable_trajectory.cpp)
+add_dependencies(repeatable_trajectory ${cobot_test_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(repeatable_trajectory ${catkin_LIBRARIES})
+
+add_executable(draw_circle src/draw_circle.cpp)
+add_dependencies(draw_circle ${cobot_test_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(draw_circle ${catkin_LIBRARIES})
+
 
 #############
 ## Install ##

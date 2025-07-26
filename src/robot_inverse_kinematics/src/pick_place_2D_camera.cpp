@@ -1,3 +1,7 @@
+// This node works correctly. The robot in gazebo (spawn_robot_camera.launch(custom_robot_gazebo pkg))
+// is able to pick the object and place it
+
+
 #include <ros/ros.h>
 #include <moveit/planning_scene_interface/planning_scene_interface.h>
 #include <moveit/move_group_interface/move_group_interface.h>
@@ -49,6 +53,7 @@ public:
             pick_position.position.y = service.response.y_base_link_frame;
             pick_position.position.z = service.response.z_base_link_frame;
 
+            // We print the position that the service gives us
             ROS_INFO_STREAM("Pick position (x, y, z): ("
                                 <<
                                 pick_position.position.x <<", "

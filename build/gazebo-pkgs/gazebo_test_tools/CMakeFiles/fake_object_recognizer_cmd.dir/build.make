@@ -147,7 +147,7 @@ fake_object_recognizer_cmd_EXTERNAL_OBJECTS =
 /home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so.1.71.0
 /home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
 /home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libprotobuf.so
-/home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libsdformat9.so.9.8.0
+/home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libsdformat9.so.9.10.1
 /home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
 /home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
 /home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
@@ -180,13 +180,13 @@ fake_object_recognizer_cmd_EXTERNAL_OBJECTS =
 /home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
 /home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
 /home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libignition-transport8.so.8.3.0
-/home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libignition-common3-graphics.so.3.14.2
-/home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libignition-fuel_tools4.so.4.6.0
-/home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libignition-msgs5.so.5.10.0
+/home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libignition-transport8.so.8.5.0
+/home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libignition-common3-graphics.so.3.17.0
+/home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libignition-fuel_tools4.so.4.9.1
+/home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libignition-msgs5.so.5.11.0
 /home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libignition-math6.so.6.15.1
 /home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libprotobuf.so
-/home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libignition-common3.so.3.14.2
+/home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libignition-common3.so.3.17.0
 /home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libuuid.so
 /home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: /usr/lib/x86_64-linux-gnu/libuuid.so
 /home/kmf/master_ws/devel/lib/gazebo_test_tools/fake_object_recognizer_cmd: gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/link.txt

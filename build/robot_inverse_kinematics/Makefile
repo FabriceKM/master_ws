@@ -168,6 +168,51 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+robot_inverse_kinematics/CMakeFiles/draw_circle.dir/rule:
+	cd /home/kmf/master_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_inverse_kinematics/CMakeFiles/draw_circle.dir/rule
+.PHONY : robot_inverse_kinematics/CMakeFiles/draw_circle.dir/rule
+
+# Convenience name for target.
+draw_circle: robot_inverse_kinematics/CMakeFiles/draw_circle.dir/rule
+
+.PHONY : draw_circle
+
+# fast build rule for target.
+draw_circle/fast:
+	cd /home/kmf/master_ws/build && $(MAKE) -f robot_inverse_kinematics/CMakeFiles/draw_circle.dir/build.make robot_inverse_kinematics/CMakeFiles/draw_circle.dir/build
+.PHONY : draw_circle/fast
+
+# Convenience name for target.
+robot_inverse_kinematics/CMakeFiles/repeatable_trajectory.dir/rule:
+	cd /home/kmf/master_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_inverse_kinematics/CMakeFiles/repeatable_trajectory.dir/rule
+.PHONY : robot_inverse_kinematics/CMakeFiles/repeatable_trajectory.dir/rule
+
+# Convenience name for target.
+repeatable_trajectory: robot_inverse_kinematics/CMakeFiles/repeatable_trajectory.dir/rule
+
+.PHONY : repeatable_trajectory
+
+# fast build rule for target.
+repeatable_trajectory/fast:
+	cd /home/kmf/master_ws/build && $(MAKE) -f robot_inverse_kinematics/CMakeFiles/repeatable_trajectory.dir/build.make robot_inverse_kinematics/CMakeFiles/repeatable_trajectory.dir/build
+.PHONY : repeatable_trajectory/fast
+
+# Convenience name for target.
+robot_inverse_kinematics/CMakeFiles/prova2.dir/rule:
+	cd /home/kmf/master_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_inverse_kinematics/CMakeFiles/prova2.dir/rule
+.PHONY : robot_inverse_kinematics/CMakeFiles/prova2.dir/rule
+
+# Convenience name for target.
+prova2: robot_inverse_kinematics/CMakeFiles/prova2.dir/rule
+
+.PHONY : prova2
+
+# fast build rule for target.
+prova2/fast:
+	cd /home/kmf/master_ws/build && $(MAKE) -f robot_inverse_kinematics/CMakeFiles/prova2.dir/build.make robot_inverse_kinematics/CMakeFiles/prova2.dir/build
+.PHONY : prova2/fast
+
+# Convenience name for target.
 robot_inverse_kinematics/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule:
 	cd /home/kmf/master_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_inverse_kinematics/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
 .PHONY : robot_inverse_kinematics/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
@@ -361,6 +406,33 @@ pick_place_ur5_grasp: robot_inverse_kinematics/CMakeFiles/pick_place_ur5_grasp.d
 pick_place_ur5_grasp/fast:
 	cd /home/kmf/master_ws/build && $(MAKE) -f robot_inverse_kinematics/CMakeFiles/pick_place_ur5_grasp.dir/build.make robot_inverse_kinematics/CMakeFiles/pick_place_ur5_grasp.dir/build
 .PHONY : pick_place_ur5_grasp/fast
+
+src/draw_circle.o: src/draw_circle.cpp.o
+
+.PHONY : src/draw_circle.o
+
+# target to build an object file
+src/draw_circle.cpp.o:
+	cd /home/kmf/master_ws/build && $(MAKE) -f robot_inverse_kinematics/CMakeFiles/draw_circle.dir/build.make robot_inverse_kinematics/CMakeFiles/draw_circle.dir/src/draw_circle.cpp.o
+.PHONY : src/draw_circle.cpp.o
+
+src/draw_circle.i: src/draw_circle.cpp.i
+
+.PHONY : src/draw_circle.i
+
+# target to preprocess a source file
+src/draw_circle.cpp.i:
+	cd /home/kmf/master_ws/build && $(MAKE) -f robot_inverse_kinematics/CMakeFiles/draw_circle.dir/build.make robot_inverse_kinematics/CMakeFiles/draw_circle.dir/src/draw_circle.cpp.i
+.PHONY : src/draw_circle.cpp.i
+
+src/draw_circle.s: src/draw_circle.cpp.s
+
+.PHONY : src/draw_circle.s
+
+# target to generate assembly for a file
+src/draw_circle.cpp.s:
+	cd /home/kmf/master_ws/build && $(MAKE) -f robot_inverse_kinematics/CMakeFiles/draw_circle.dir/build.make robot_inverse_kinematics/CMakeFiles/draw_circle.dir/src/draw_circle.cpp.s
+.PHONY : src/draw_circle.cpp.s
 
 src/pick_place.o: src/pick_place.cpp.o
 
@@ -578,6 +650,60 @@ src/pick_place_ur5_robotiq_3D_camera.cpp.s:
 	cd /home/kmf/master_ws/build && $(MAKE) -f robot_inverse_kinematics/CMakeFiles/pick_place_ur5_robotiq_3D_camera.dir/build.make robot_inverse_kinematics/CMakeFiles/pick_place_ur5_robotiq_3D_camera.dir/src/pick_place_ur5_robotiq_3D_camera.cpp.s
 .PHONY : src/pick_place_ur5_robotiq_3D_camera.cpp.s
 
+src/prova2.o: src/prova2.cpp.o
+
+.PHONY : src/prova2.o
+
+# target to build an object file
+src/prova2.cpp.o:
+	cd /home/kmf/master_ws/build && $(MAKE) -f robot_inverse_kinematics/CMakeFiles/prova2.dir/build.make robot_inverse_kinematics/CMakeFiles/prova2.dir/src/prova2.cpp.o
+.PHONY : src/prova2.cpp.o
+
+src/prova2.i: src/prova2.cpp.i
+
+.PHONY : src/prova2.i
+
+# target to preprocess a source file
+src/prova2.cpp.i:
+	cd /home/kmf/master_ws/build && $(MAKE) -f robot_inverse_kinematics/CMakeFiles/prova2.dir/build.make robot_inverse_kinematics/CMakeFiles/prova2.dir/src/prova2.cpp.i
+.PHONY : src/prova2.cpp.i
+
+src/prova2.s: src/prova2.cpp.s
+
+.PHONY : src/prova2.s
+
+# target to generate assembly for a file
+src/prova2.cpp.s:
+	cd /home/kmf/master_ws/build && $(MAKE) -f robot_inverse_kinematics/CMakeFiles/prova2.dir/build.make robot_inverse_kinematics/CMakeFiles/prova2.dir/src/prova2.cpp.s
+.PHONY : src/prova2.cpp.s
+
+src/repeatable_trajectory.o: src/repeatable_trajectory.cpp.o
+
+.PHONY : src/repeatable_trajectory.o
+
+# target to build an object file
+src/repeatable_trajectory.cpp.o:
+	cd /home/kmf/master_ws/build && $(MAKE) -f robot_inverse_kinematics/CMakeFiles/repeatable_trajectory.dir/build.make robot_inverse_kinematics/CMakeFiles/repeatable_trajectory.dir/src/repeatable_trajectory.cpp.o
+.PHONY : src/repeatable_trajectory.cpp.o
+
+src/repeatable_trajectory.i: src/repeatable_trajectory.cpp.i
+
+.PHONY : src/repeatable_trajectory.i
+
+# target to preprocess a source file
+src/repeatable_trajectory.cpp.i:
+	cd /home/kmf/master_ws/build && $(MAKE) -f robot_inverse_kinematics/CMakeFiles/repeatable_trajectory.dir/build.make robot_inverse_kinematics/CMakeFiles/repeatable_trajectory.dir/src/repeatable_trajectory.cpp.i
+.PHONY : src/repeatable_trajectory.cpp.i
+
+src/repeatable_trajectory.s: src/repeatable_trajectory.cpp.s
+
+.PHONY : src/repeatable_trajectory.s
+
+# target to generate assembly for a file
+src/repeatable_trajectory.cpp.s:
+	cd /home/kmf/master_ws/build && $(MAKE) -f robot_inverse_kinematics/CMakeFiles/repeatable_trajectory.dir/build.make robot_inverse_kinematics/CMakeFiles/repeatable_trajectory.dir/src/repeatable_trajectory.cpp.s
+.PHONY : src/repeatable_trajectory.cpp.s
+
 src/test_ik.o: src/test_ik.cpp.o
 
 .PHONY : src/test_ik.o
@@ -694,6 +820,9 @@ help:
 	@echo "... depend"
 	@echo "... install/local"
 	@echo "... test"
+	@echo "... draw_circle"
+	@echo "... repeatable_trajectory"
+	@echo "... prova2"
 	@echo "... moveit_ros_manipulation_gencfg"
 	@echo "... install"
 	@echo "... ur5_test_ik_collision_objects"
@@ -712,6 +841,9 @@ help:
 	@echo "... pick_place_ur5_robotiq_3D_camera"
 	@echo "... list_install_components"
 	@echo "... pick_place_ur5_grasp"
+	@echo "... src/draw_circle.o"
+	@echo "... src/draw_circle.i"
+	@echo "... src/draw_circle.s"
 	@echo "... src/pick_place.o"
 	@echo "... src/pick_place.i"
 	@echo "... src/pick_place.s"
@@ -736,6 +868,12 @@ help:
 	@echo "... src/pick_place_ur5_robotiq_3D_camera.o"
 	@echo "... src/pick_place_ur5_robotiq_3D_camera.i"
 	@echo "... src/pick_place_ur5_robotiq_3D_camera.s"
+	@echo "... src/prova2.o"
+	@echo "... src/prova2.i"
+	@echo "... src/prova2.s"
+	@echo "... src/repeatable_trajectory.o"
+	@echo "... src/repeatable_trajectory.i"
+	@echo "... src/repeatable_trajectory.s"
 	@echo "... src/test_ik.o"
 	@echo "... src/test_ik.i"
 	@echo "... src/test_ik.s"

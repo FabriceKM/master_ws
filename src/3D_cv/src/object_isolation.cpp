@@ -18,7 +18,7 @@ void isolateCylinder(const std::string& input_pcd, const std::string& output_pcd
 {   
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::PCDReader cloud_reader;
-    cloud_reader.read (input_pcd,*cloud);
+    cloud_reader.read (input_pcd,*cloud);   // We pass input_pcd to *cloud
 
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_filtered(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::VoxelGrid<pcl::PointXYZ> voxel_filter;
@@ -35,8 +35,9 @@ void isolateCylinder(const std::string& input_pcd, const std::string& output_pcd
 
     seg.setOptimizeCoefficients(true);
     seg.setMethodType(pcl::SACMODEL_PLANE);
-    seg.setModelType(pcl::SAC_RANSAC);
+    seg.setModelType(pcl::SAC_RANSAC);   // model to segmentate the plane
     seg.setMaxIterations(100);
+    /* The more this value is higher, the more we're trying to involve points in the plane */
     seg.setDistanceThreshold(0.01);
 
     seg.setInputCloud(cloud_filtered);
@@ -46,6 +47,7 @@ void isolateCylinder(const std::string& input_pcd, const std::string& output_pcd
     pcl::ExtractIndices<pcl::PointXYZ> neg_plane_extraxted;
     neg_plane_extraxted.setInputCloud(cloud_filtered);
     neg_plane_extraxted.setIndices(inliers_plane);
+    // Set an environment with no plane inside. If we put it "false", we'll have just the plane inside
     neg_plane_extraxted.setNegative(true);
     neg_plane_extraxted.filter(*cloud_filtered);
 
@@ -53,32 +55,33 @@ void isolateCylinder(const std::string& input_pcd, const std::string& output_pcd
     pass.setInputCloud(cloud_filtered);
     pass.setFilterFieldName("z");
     // pass.setFilterLimits(0.5, 1.05); // PLAY --> based on the z direction, check the pcd file
-    pass.setFilterLimits(0.5, 1.05);
+    pass.setFilterLimits(0.5, 1.10);
     pass.filter(*cloud_filtered);
 
     pass.setFilterFieldName("x");
     // pass.setFilterLimits(0.0, 0.2); // PLAY --> based on the x direction, check the pcd file
-    pass.setFilterLimits(0.0, 0.2);
+    pass.setFilterLimits(-0.15, -0.12);
     pass.filter(*cloud_filtered);
 
     pass.setFilterFieldName("y");
-    // pass.setFilterLimits(-0.2, 0); // PLAY --> based on the y direction, check the pcd file
-    pass.setFilterLimits(-0.2, 0.05);
+    pass.setFilterLimits(-0.2, 0.18); // PLAY --> based on the y direction, check the pcd file
+    // pass.setFilterLimits(-0.2, 0.05);
     pass.filter(*cloud_filtered);
 
     // Remove outliers using a statistical outlier removal filter
     pcl::StatisticalOutlierRemoval<pcl::PointXYZ> sor;
-    sor.setInputCloud(cloud_filtered);
-    sor.setMeanK(50);
+    sor.setInputCloud(cloud_filtered);   // We start from our filtered point cloud considered as a signal
+    sor.setMeanK(50);   // 50 represents the number of points we consider along a certain threshold
     sor.setStddevMulThresh(1.0);
     sor.filter(*cloud_filtered);
 
 
 
     // Segment the cylinder using RANSAC
-    // Get the normals
+    // Get the normals of our cloud
     pcl::PointCloud<pcl::PointNormal>::Ptr cloud_normals(new pcl::PointCloud<pcl::PointNormal>);
     pcl::NormalEstimation<pcl::PointXYZ, pcl::PointNormal> normals_estimator;
+    // KdTree is somekind of nearest neighborhood search
     pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>());
     normals_estimator.setSearchMethod(tree);
     normals_estimator.setInputCloud(cloud_filtered);
@@ -102,7 +105,7 @@ void isolateCylinder(const std::string& input_pcd, const std::string& output_pcd
     pcl::ModelCoefficients::Ptr coefficients_cylinder(new pcl::ModelCoefficients);
     cylinder_segmentator.segment(*inliers_cylinder,*coefficients_cylinder);
 
-    // Extract the cylinder
+    // Extract the cylinder as we did with the plane
     pcl::ExtractIndices<pcl::PointXYZ> cylinder_extracted;
     cylinder_extracted.setInputCloud(cloud_filtered);
     cylinder_extracted.setIndices(inliers_cylinder);
@@ -116,7 +119,7 @@ void isolateCylinder(const std::string& input_pcd, const std::string& output_pcd
     Eigen::Vector4f centroid;
     pcl::compute3DCentroid(*cloud_filtered, centroid);
 
-    // Print the centroid coordinates
+    // Print the centroid coordinates (x, y, z of our cuboid that has been represented from a cylinder)
     std::cout << "centroid of the cylinder in camera frame: ("
               << centroid[0] << ", "
               << centroid[1] << ", "
